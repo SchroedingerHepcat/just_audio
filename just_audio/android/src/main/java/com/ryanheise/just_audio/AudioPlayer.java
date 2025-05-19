@@ -439,7 +439,7 @@ public class AudioPlayer implements MethodCallHandler, Player.Listener, Metadata
                 result.success(new HashMap<String, Object>());
                 break;
             case "setSpeed":
-                Log.e("JustAudio", "offloadEnabled=" + player.getAudioAttributes();
+                Log.e("JustAudio", "offloadEnabled=" + player.getAudioAttributes());
                 //Log.e("JustAudio", "offloadEnabled=" + player.getAudioAttributes().offloadSchedulingEnabled());
                 //Log.e("JustAudio", "speedChangeSupported=" + player.getAudioAttributes().contentType()); // not a direct query but useful
                 setSpeed((float) ((double) ((Double) call.argument("speed"))));
@@ -801,7 +801,7 @@ public class AudioPlayer implements MethodCallHandler, Player.Listener, Metadata
             );
             setAudioSessionId(player.getAudioSessionId());
             player.addListener(this);
-            Log.e("JustAudio", "offloadEnabled=" + player.getAudioAttributes().;
+            Log.e("JustAudio", "offloadEnabled=" + player.getAudioAttributes());
             //Log.e("JustAudio", "offloadEnabled=" + player.getAudioAttributes().offloadSchedulingEnabled());
             //Log.e("JustAudio", "speedChangeSupported=" + player.getAudioAttributes().contentType());
         }
