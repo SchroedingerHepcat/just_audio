@@ -790,13 +790,15 @@ public class AudioPlayer implements MethodCallHandler, Player.Listener, Metadata
                         new AudioOffloadPreferences.Builder()
                             .setIsGaplessSupportRequired(!offloadSchedulingEnabled)
                             .setIsSpeedChangeSupportRequired(!offloadSchedulingEnabled)
-                            .setAudioOffloadMode(AudioOffloadPreferences.AUDIO_OFFLOAD_MODE_ENABLED)
+                            .setAudioOffloadMode(AudioOffloadPreferences.AUDIO_OFFLOAD_MODE_DISABLED)
                             .build()
                     )
                     .build()
             );
             setAudioSessionId(player.getAudioSessionId());
             player.addListener(this);
+            Log.d("JustAudio", "offloadEnabled=" + player.getAudioAttributes().offloadSchedulingEnabled());
+            Log.d("JustAudio", "speedChangeSupported=" + player.getAudioAttributes().contentType());
         }
     }
 
